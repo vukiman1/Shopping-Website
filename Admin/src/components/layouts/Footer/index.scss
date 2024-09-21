@@ -1,0 +1,119 @@
+@import '../../GlobalStyle/mixins';
+.footer {
+    width: 100%;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+}
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    @include Responsive(smartPhone) {
+        flex-direction: column-reverse;
+    }
+    @media screen and (min-width: 500px) and (max-width: 739px) {
+        flex-wrap: wrap-reverse;
+        flex-direction: row-reverse;
+    }
+}
+
+.footer__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    @include Responsive(smartPhone) {
+        text-align: center;
+    }
+}
+.footer__promo {
+    width: calc((100% - 48px) / 3);
+    @include Responsive(smartPhone) {
+        width: 100%;
+        text-align: center;
+    }
+    @media screen and (min-width: 500px) and (max-width: 739px) {
+        width: 100%;
+        text-align: center;
+    }
+    & p {
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
+    & p:hover {
+        color: var(--main-color);
+        font-weight: 500;
+    }
+}
+.footer__promo__img {
+    height: 150px;
+    width: 250px;
+    @include Responsive(tablet) {
+        height: 150px;
+        width: 200px;
+    }
+    @include Responsive(smartPhone) {
+        height: 150px;
+        width: 250px;
+    }
+}
+.footer__quicklinks {
+    margin-bottom: 1rem;
+    width: calc((100% - 48px) / 3);
+    padding: 0 1rem;
+    @include Responsive(smartPhone) {
+        width: 100%;
+        padding: 0 2.4rem;
+    }
+    @media screen and (min-width: 520px) and (max-width: 739px) {
+        width: calc((100% - 18px) / 2);
+    }
+}
+.quicklinks__list {
+    display: flex;
+    justify-content: space-between;
+}
+.list__link {
+    width: calc((100% - 18px) / 2);
+    & a {
+        display: block;
+        font-size: 1.6rem;
+        line-height: 3rem;
+        font-weight: 300;
+    }
+    & a:hover {
+        color: var(--main-color);
+        font-weight: 500;
+    }
+}
+.footer__contact {
+    margin-bottom: 1rem;
+    padding: 0 2rem;
+    width: calc((100% - 48px) / 3);
+    @include Responsive(smartPhone) {
+        width: 100%;
+        padding: 0 2.4rem;
+    }
+    @media screen and (min-width: 520px) and (max-width: 739px) {
+        width: calc((100% - 18px) / 2);
+    }
+}
+
+.contact__text {
+    font-size: 1.6rem;
+    line-height: 3rem;
+    font-weight: 300;
+}
+
+.footer__icon {
+    padding-right: 8px;
+    color: var(--main-color);
+}
+
+.footer__copyright {
+    padding-top: 3rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-align: center;
+}

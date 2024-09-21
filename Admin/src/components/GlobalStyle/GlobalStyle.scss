@@ -1,0 +1,167 @@
+@import 'mixins';
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@100;200;300;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #ee4266;
+    --header-height: 7rem;
+    --main-font: 'Montserat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--main-font);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}
+
+.mg-t {
+    margin-top: 1.6rem;
+}
+
+.mg-t4 {
+    margin-top: 4rem;
+}
+
+.mg-t2 {
+    margin-top: 2rem;
+}
+.mg-b4 {
+    margin-bottom: 4rem;
+}
+.mg-b3 {
+    margin-bottom: 3rem;
+}
+.text-center {
+    text-align: center;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover,
+a:active {
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button {
+    font-family: var(--main-font);
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    @include Responsive(tablet) {
+        width: 94%;
+    }
+    @include Responsive(smartPhone) {
+        width: 94%;
+    }
+}
+
+.grid {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12px;
+    @include Responsive(tablet) {
+        margin: 0 -6px;
+    }
+    @include Responsive(smartPhone) {
+        margin: 0 -4px;
+    }
+}
+.col {
+    width: 25%;
+    padding: 24px 12px;
+    @include Responsive(tablet) {
+        width: calc(100% / 3);
+        padding: 12px 6px;
+    }
+    @include Responsive(smartPhone) {
+        width: 50%;
+        padding: 12px 4px;
+    }
+}
+.form__title {
+    font-size: 2.8rem;
+    text-align: center;
+    color: var(--main-color);
+}
+
+.form__label {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+}
+
+.form__input,
+.form__textarea {
+    width: 100%;
+    height: 2.8rem;
+    font-size: 1.6rem;
+    padding: 8px;
+    outline: none;
+    border-radius: 5px;
+    border: 0.5px solid black;
+}
+input:focus {
+    outline: #0994d0;
+    order: 0.5px solid rgb(7, 36, 153);
+}
+
+input::placeholder {
+    font-family: var(--main-font);
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+.form__errorMsg {
+    margin-top: 0.4rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1rem;
+    color: red;
+}
+
+.form__submit__btn {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 1.6rem;
+    font-family: var(--main-font);
+    color: aliceblue;
+    background-color: var(--main-color);
+    border: none;
+}
+
+.form__submit__btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+.SnackbarItem-contentRoot {
+    font-size: 1.4rem !important;
+}

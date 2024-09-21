@@ -1,0 +1,145 @@
+@import '../../components/GlobalStyle/mixins';
+.products {
+    margin-top: var(--header-height);
+}
+
+.products__title {
+    font-size: 2.8rem;
+    font-weight: 500;
+    padding-top: 1rem;
+    color: var(--main-color);
+    letter-spacing: 2px;
+}
+.products__search {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    padding: 6px 10px;
+    background-color: #f0f0f0;
+}
+
+.search__input {
+    width: 95%;
+    font-size: 1.6rem;
+    border: none;
+    outline: none;
+    background-color: #f0f0f0;
+}
+
+.search__icon {
+    width: 5%;
+    color: var(--main-color);
+}
+.search__icon:hover {
+    cursor: pointer;
+}
+
+.products__tag {
+    display: inline-block;
+    margin: 0 4px;
+    padding: 8px 12px;
+    font-size: 1.6rem;
+    font-family: var(--main-font);
+    border: 1px solid rgb(37, 20, 20);
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+
+    @include Responsive(tablet) {
+        padding: 4px 12px;
+        margin: 2px 4px;
+    }
+    @include Responsive(smartPhone) {
+        padding: 4px 12px;
+        margin: 2px 4px;
+    }
+}
+
+.products__tag--active {
+    color: white;
+    background-color: black;
+}
+
+.products__tag:hover {
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+}
+
+.products__card {
+    padding: 18px 12px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 1.5px 1.5px rgb(238, 233, 233);
+    @include Responsive(tablet) {
+        padding: 12px 8px;
+    }
+    @include Responsive(smartPhone) {
+        padding: 12px 8px;
+    }
+    @media screen and (min-width: 500px) and (max-width: 739px) {
+        padding: 18px 12px;
+    }
+}
+
+.products__img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image is cropped to fit the container without distortion */
+        object-position: center;
+        @include Responsive(tablet) {
+            width: 80%;
+            height: 180px;
+        }
+        @include Responsive(smartPhone) {
+            width: 80%;
+            height: 160px;
+        }
+        @media screen and (min-width: 500px) and (max-width: 739px) {
+            width: 75%;
+            height: 200px;
+        }
+        @media screen and (max-width: 375px) {
+            width: 80%;
+            height: 100px;
+        }
+    }
+}
+
+.products__name {
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.products__price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-bottom: 12px;
+}
+
+.btn__buy {
+    display: inline-block;
+    font-size: 1.6rem;
+    padding: 4px 12px;
+    border: 1px solid rgb(37, 20, 20);
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+}
+
+.btn__buy:hover {
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}

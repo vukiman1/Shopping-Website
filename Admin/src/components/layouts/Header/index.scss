@@ -1,0 +1,173 @@
+@import '../../GlobalStyle/mixins';
+.header {
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    width: 100%;
+    height: var(--header-height);
+    line-height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(174, 172, 170) 1px 1px 1px;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__logo {
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #b6d9e7;
+    color: var(--main-color) !important;
+    @include Responsive(smartPhone) {
+        display: none;
+    }
+}
+.nav__menu__icon {
+    color: var(--main-color);
+    padding-right: 8px;
+    font-size: 2rem;
+    @include Responsive(pc) {
+        display: none;
+    }
+}
+.nav__menu__icon:hover {
+    cursor: pointer;
+}
+
+#pc_nav_menu {
+    @include Responsive(tablet) {
+        display: none;
+    }
+    @include Responsive(smartPhone) {
+        display: none;
+    }
+}
+
+#small_nav_menu {
+    @include Responsive(pc) {
+        display: none;
+    }
+}
+
+.nav__menu {
+    z-index: 20;
+    @include Responsive(tablet) {
+        left: 0;
+        width: 45%;
+        background-color: white;
+    }
+    @include Responsive(smartPhone) {
+        left: 0;
+        width: 45%;
+        background-color: white;
+    }
+}
+
+.sidebar__menu {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+}
+
+.sidebar__overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar__nav__logo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #b6d9e7;
+    color: var(--main-color) !important;
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.nav__item {
+    display: inline-block;
+    @include Responsive(tablet) {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+        line-height: 2rem;
+        text-align: center;
+    }
+    @include Responsive(smartPhone) {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+        line-height: 2rem;
+        text-align: center;
+    }
+}
+.nav__item:hover {
+    @include Responsive(tablet) {
+        background-color: white;
+        border-left: 2px solid var(--main-color);
+    }
+    @include Responsive(smartPhone) {
+        background-color: white;
+        border-left: 2px solid var(--main-color);
+    }
+}
+
+.nav__link {
+    font-size: 2rem;
+    font-weight: 500;
+    @include Responsive(pc) {
+        padding: 12px 12px;
+    }
+    @include Responsive(tablet) {
+        display: block;
+        width: 100%;
+    }
+    @include Responsive(smartPhone) {
+        display: block;
+        width: 100%;
+    }
+}
+.nav__link:hover {
+    color: var(--main-color) !important;
+}
+
+.nav a:visited {
+    color: black;
+}
+
+.nav__button {
+    font-size: 1.4rem;
+    font-style: 400;
+    padding: 6px 8px;
+    color: black;
+    background-color: white;
+    border: 1.5px solid black;
+    border-radius: 50px;
+    margin-left: 10px;
+}
+
+.nav .nav__button:hover {
+    border: 1.5px solid white;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+.btn__icon {
+    padding-right: 6px;
+}
+
+.active {
+    color: var(--main-color) !important;
+    font-weight: 600;
+}

@@ -1,0 +1,74 @@
+@import '../../components/GlobalStyle/mixins';
+.contact {
+    margin-top: var(--header-height);
+}
+.contact__bgr {
+    background: url('../../assets/contact/1.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 65vh;
+    @include Responsive(smartPhone) {
+        height: 40vh;
+    }
+}
+.contact__content {
+    display: flex;
+    justify-content: space-between;
+    margin: 6rem 0;
+    @include Responsive(tablet) {
+        flex-direction: column;
+        margin: 4rem 0;
+    }
+    @include Responsive(smartPhone) {
+        flex-direction: column;
+        margin: 4rem 0;
+    }
+}
+.contact__message {
+    padding: 50px 50px;
+    width: calc((100% - 60px) / 2);
+    border: 0.3px solid rgb(196, 192, 192);
+    & h3 {
+        font-size: 2.4rem;
+        font-weight: 500;
+        color: var(--main-color);
+    }
+    @include Responsive(tablet) {
+        width: 100%;
+    }
+    @include Responsive(smartPhone) {
+        width: 100%;
+    }
+}
+.contact__message .form__submit__btn {
+    margin-top: 1.4rem;
+    border-radius: 25px;
+}
+
+.contact__address {
+    padding: 50px 50px;
+    width: calc((100% - 60px) / 2);
+    border: 0.3px solid rgb(196, 192, 192);
+    @include Responsive(tablet) {
+        width: 100%;
+    }
+    @include Responsive(smartPhone) {
+        width: 100%;
+    }
+}
+
+.contact__city {
+    background-color: rgb(243, 243, 237);
+    padding: 6px 12px;
+    & h3 {
+        font-size: 2.4rem;
+        font-weight: 500;
+        color: var(--main-color);
+    }
+    & p {
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 2rem;
+        margin-bottom: 10px;
+    }
+}

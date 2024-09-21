@@ -1,0 +1,51 @@
+@import '../../components/GlobalStyle/mixins';
+.bgr {
+    margin-top: var(--header-height);
+    height: 80vh;
+    background: url('../../../src/assets/bgr/bg2.jpg');
+    background-size: cover;
+    background-position: center center;
+    &__intro {
+        position: absolute;
+        top: 35vh;
+        left: 10vh;
+        color: whitesmoke;
+        opacity: 0;
+        text-shadow: 3px 3px rgba(41, 29, 29);
+        animation: textFly 4s forwards;
+        font-size: 3.4rem;
+    }
+    &__intro h3 {
+        font-weight: bold;
+        color: whitesmoke;
+    }
+    &__intro p {
+        font-weight: 300;
+        color: whitesmoke;
+    }
+
+    @include Responsive(tablet) {
+        height: 40vh;
+        &__intro {
+            top: 20vh;
+            left: 3%;
+        }
+    }
+    @include Responsive(smartPhone) {
+        height: 40vh;
+        &__intro {
+            top: 20vh;
+            left: 3%;
+            font-size: 2rem;
+        }
+    }
+}
+
+@keyframes textFly {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,65 @@
+@import '../../components/GlobalStyle/mixins';
+.cart__wrap {
+    margin-top: var(--header-height);
+}
+.cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.4rem 0;
+}
+.cart__preview {
+    width: 50%;
+    text-align: center;
+}
+.cart__img {
+    height: 180px;
+    width: 180px;
+    @include Responsive(tablet) {
+        height: 150px;
+        width: 150px;
+    }
+    @include Responsive(smartPhone) {
+        height: 100px;
+        width: 100px;
+    }
+}
+.cart__detail {
+    width: 50%;
+}
+
+.cart__name {
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.cart__price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cart__btn {
+    margin-right: 4px;
+    padding: 8px 10px;
+    font-size: 1rem;
+    font-family: 'Gantari', sans-serif;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.btn--decr:hover,
+.btn--add:hover {
+    cursor: pointer;
+    border: 1.5px solid white;
+    color: white;
+    background-color: black;
+}
+
+.total__price {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 3rem;
+}

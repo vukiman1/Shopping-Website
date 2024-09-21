@@ -1,0 +1,56 @@
+@import '../GlobalStyle/mixins';
+.account {
+    display: inline-block;
+}
+
+.account__info {
+    position: absolute;
+    min-width: 150px;
+    background-color: white;
+    top: var(--header-hight);
+    padding: 1rem 0rem;
+    border-radius: 2px;
+    box-shadow: 0px 0px 1px 1px rgb(210, 207, 207);
+    @include Responsive(smartPhone) {
+        min-width: 100%;
+        left: 0px;
+        padding: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+.account__list__link {
+    display: block;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    font-weight: 300;
+    & a {
+        padding: 4px 24px;
+        display: block;
+        width: 100%;
+    }
+    & a:hover {
+        color: var(--main-color);
+        border-left: 2px solid var(--main-color);
+        @include Responsive(smartPhone) {
+            background-color: white;
+        }
+    }
+}
+
+.account__logout {
+    display: block;
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 2.8rem;
+    padding: 4px 24px;
+}
+.account__logout:hover {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--main-color);
+    border-left: 2px solid var(--main-color);
+    @include Responsive(smartPhone) {
+        background-color: white;
+    }
+}

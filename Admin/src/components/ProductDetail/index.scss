@@ -1,0 +1,99 @@
+@import '../GlobalStyle/mixins';
+.product {
+    margin-top: var(--header-height);
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2.4rem;
+    @include Responsive(smartPhone) {
+        flex-direction: column;
+    }
+}
+
+.product__preview {
+    width: 50%;
+    text-align: center;
+    @include Responsive(smartPhone) {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+.product__img {
+    height: 400px;
+    width: 400px;
+    object-fit: cover; /* Ensures the image is cropped to fit the container without distortion */
+    object-position: center;
+    @include Responsive(tablet) {
+        height: 300px;
+        width: 300px;
+    }
+    @include Responsive(smartPhone) {
+        height: 200px;
+        width: 200px;
+    }
+    @media screen and (min-width: 500px) and (max-width: 739px) {
+        height: 300px;
+        width: 280px;
+    }
+}
+.product__overview {
+    width: 50%;
+    @include Responsive(smartPhone) {
+        width: 100%;
+    }
+}
+.product__category {
+    color: rgb(96, 111, 122);
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+.product__name {
+    font-size: 2.6rem;
+    font-weight: 300;
+    line-height: 3rem;
+    margin-bottom: 10px;
+}
+.product__rating {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.rate__icon {
+    vertical-align: baseline;
+    padding-left: 4px;
+}
+.product__price {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+.product__desc {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 24px;
+}
+.product__btn {
+    margin-right: 4px;
+    padding: 6px 14px;
+    font-size: 1.6rem;
+    font-family: 'Gantari', sans-serif;
+    border-radius: 10px;
+}
+.btn--add,
+.btn--go:hover {
+    cursor: pointer;
+    border: 1.5px solid rgb(37, 20, 20);
+    color: black;
+    background-color: white;
+}
+.btn--go,
+.btn--add:hover {
+    cursor: pointer;
+    border: 1.5px solid white;
+    color: white;
+    background-color: black;
+}
