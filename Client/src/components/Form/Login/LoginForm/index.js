@@ -16,11 +16,11 @@ function LoginForm({ handleCloseModal }) {
     const msg = {};
     // Validate email
     if (email.trim() === "") {
-      msg.usernameInput = "*Please enter your email";
+      msg.usernameInput = "*Vui lòng nhập email";
     }
     // Validate password
     if (passWord.trim() === "") {
-      msg.passwordInput = "*Please enter your password";
+      msg.passwordInput = "*Vui lòng nhập mật khẩu";
     }
     setErrorMsg(msg);
     return Object.keys(msg).length === 0; // Correct condition
@@ -56,7 +56,7 @@ function LoginForm({ handleCloseModal }) {
         );
         handleCloseModal();
       } else {
-        enqueueSnackbar("Invalid email or password. Please try again.", {
+        enqueueSnackbar("Sai tên đăng nhập hoặc mật khẩu, vui lòng thử lại.", {
           variant: "error",
         });
       }
@@ -65,7 +65,7 @@ function LoginForm({ handleCloseModal }) {
 
   return (
     <form className="login__form" onSubmit={handleLoginSubmit}>
-      <h3 className="form__title">Login</h3>
+      <h3 className="form__title">Đăng nhập</h3>
       <div className="mg-t">
         <label className="form__label">Email</label> <br />
         <input
@@ -74,26 +74,26 @@ function LoginForm({ handleCloseModal }) {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
+          placeholder="Email"
         />
         <p className="form__errorMsg">{errorMsg.usernameInput}</p>
       </div>
       <div className="mg-t">
-        <label className="form__label">Mật kh</label> <br />
+        <label className="form__label">Mật khẩu</label> <br />
         <input
           className="form__input"
           type="password"
           value={passWord}
           onChange={(e) => setPassWord(e.target.value)}
-          placeholder="Enter your password"
+          placeholder="Mật khẩu"
         />
         <p className="form__errorMsg">{errorMsg.passwordInput}</p>
       </div>
       <button type="submit" className="form__submit__btn">
-        Login
+        Đăng nhập
       </button>
       <div>
-        Don't have an account? <Link to="/register">Sign Up</Link>
+        Chưacos tài khoản? <Link to="/register">Đăng ký ngay</Link>
       </div>
     </form>
   );
