@@ -57,7 +57,7 @@ const UserForm = (props) => {
   const [imageUpload, setImageUpload] = useState(
     "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=338&ext=jpg&ga=GA1.1.1413502914.1720105200&semt=sph"
   );
-  const { user = { id: v4(), status: "active", role: "user" } } = props;
+  const { user = { _id: v4(), status: "active", role: "user" } } = props;
   console.log(user);
   console.log(Object.keys(user).length);
   const onFinish = async () => {
@@ -76,7 +76,7 @@ const UserForm = (props) => {
         method = "POST";
         delete values.confirm;
       } else {
-        url = `${BASE_URL}/users/${user.id}`;
+        url = `${BASE_URL}/users/${user._id}`;
         method = "PUT";
         values.avatar = user.avatar;
       }

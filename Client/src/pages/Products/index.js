@@ -4,7 +4,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { BASE_URL } from "../../config/config";
 function Products() {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
@@ -14,9 +14,7 @@ function Products() {
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      const response = await fetch(
-        "https://66d0185e181d059277dd323b.mockapi.io/api/v1/products"
-      );
+      const response = await fetch(`${BASE_URL}/products`);
       setData(await response.clone().json());
       setFilter(await response.json());
       setLoading(false);

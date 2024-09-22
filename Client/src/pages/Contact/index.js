@@ -22,21 +22,21 @@ function Contact(props) {
   const validateAll = () => {
     const msg = {};
     if (name.trim() === "") {
-      msg.nameInput = "*Please enter your name";
+      msg.nameInput = "*Vui lòng nhập tên của bạn!";
       nameRef.current.focus();
     } else if (name.trim().split(" ").length < 2) {
-      msg.nameInput = "*Please enter your full name (both first and last)";
+      msg.nameInput = "*Phải điền đầy đủ họ tên";
     }
 
-    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const mailformat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     if (email.trim() === "") {
-      msg.emailInput = "*Please enter your email";
+      msg.emailInput = "*Chưa điền email";
     } else if (!email.match(mailformat)) {
-      msg.emailInput = "*Please enter a valid email address";
+      msg.emailInput = "*Định dạng email ko hợp lệ";
     }
 
     if (message.trim() === "") {
-      msg.messageInput = "*Please share something";
+      msg.messageInput = "*Có lỗi gì đó ở đây...";
     }
 
     setErrorMsg(msg);

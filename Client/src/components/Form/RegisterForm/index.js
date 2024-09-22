@@ -6,6 +6,7 @@ import { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../Login/LoginForm/userSlice";
 import { v4 } from "uuid";
+import { BASE_URL } from "../../../config/config";
 
 function RegisterForm() {
   const [name, setName] = useState("");
@@ -68,10 +69,7 @@ function RegisterForm() {
         });
         return response.json();
       }
-      postData(
-        "https://66d0185e181d059277dd323b.mockapi.io/api/v1/users",
-        userdata
-      );
+      postData(`${BASE_URL}/users`, userdata);
       dispatch(login(userdata));
       localStorage.setItem(
         "currentUser",

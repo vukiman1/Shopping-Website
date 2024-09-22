@@ -9,6 +9,7 @@ import { useSnackbar } from "notistack";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../pages/Cart/cartSlice";
+import { BASE_URL } from "../../config/config";
 
 function Product() {
   const { id } = useParams();
@@ -20,18 +21,16 @@ function Product() {
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
-      const response = await fetch(
-        `https://66d0185e181d059277dd323b.mockapi.io/api/v1/products/${id}`
-      );
+      const response = await fetch(`${BASE_URL}/products/${id}`);
       setProduct(await response.json());
       setLoading(false);
     };
     getProduct();
-  }, []);
+  });
 
   const handleAddItem = () => {
     dispatch(addItem(product));
-    enqueueSnackbar("You have added an item", { variant: "info" });
+    enqueueSnackbar("Đã thêm sản phẩm mới vào giỏ hàng", { variant: "info" });
   };
   const Loading = () => {
     return (
@@ -81,13 +80,13 @@ function Product() {
           <h3 className="product__category">{product.category}</h3>
           <p className="product__name">{product.name}</p>
           <p className="product__rating">
-            Rating {product.rating && product.rating.rate}
+            Đánh giá {product.rating && product.rating.rate}
             <FontAwesomeIcon
               className="rate__icon"
               icon="fa-solid fa-m fa-star"
             />
           </p>
-          <h2 className="product__price mg-sm"> $ {product.price}</h2>
+          <h2 className="product__price mg-sm">{product.price} VNĐ</h2>
           <p className="product__desc">{product.description}</p>
           <div>
             <button

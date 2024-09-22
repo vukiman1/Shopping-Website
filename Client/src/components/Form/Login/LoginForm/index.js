@@ -5,6 +5,7 @@ import { useSnackbar } from "notistack";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "./userSlice";
+import { BASE_URL } from "../../../../config/config";
 
 function LoginForm({ handleCloseModal }) {
   const [email, setEmail] = useState("");
@@ -31,9 +32,7 @@ function LoginForm({ handleCloseModal }) {
 
   useEffect(() => {
     const getUserdata = async () => {
-      const response = await fetch(
-        "https://66d0185e181d059277dd323b.mockapi.io/api/v1/users"
-      );
+      const response = await fetch(`${BASE_URL}users`);
       if (response.ok) {
         setUserdata(await response.json());
       } else {
