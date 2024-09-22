@@ -3,6 +3,8 @@ import "./index.scss";
 import { useSnackbar } from "notistack";
 
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "./userSlice";
 
 function LoginForm({ handleCloseModal }) {
   const [email, setEmail] = useState("");
@@ -12,6 +14,7 @@ function LoginForm({ handleCloseModal }) {
   const usernameRef = useRef();
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const validateAll = () => {
     const msg = {};
     // Validate email
@@ -54,7 +57,9 @@ function LoginForm({ handleCloseModal }) {
           "currentUser",
           JSON.stringify({ user: existAccount, login: true })
         );
-        handleCloseModal();
+        dispatch(login(existAccount));
+
+        // handleCloseModal();
       } else {
         enqueueSnackbar("Sai tên đăng nhập hoặc mật khẩu, vui lòng thử lại.", {
           variant: "error",

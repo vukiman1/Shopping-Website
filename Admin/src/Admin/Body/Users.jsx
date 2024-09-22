@@ -184,7 +184,7 @@ const Users = () => {
                 src={<Image width={40} src={record.avatar} />}
                 style={{ marginRight: "10px" }}
               />
-              <Link to={`/users/edit/${record.id}`}>
+              <Link to={`/users/edit/${record._id}`}>
                 <b>{record.name}</b>
               </Link>
             </>
@@ -227,7 +227,7 @@ const Users = () => {
           <Space.Compact block>
             <Tooltip title="Sửa">
               <Button>
-                <Link to={`/users/edit/${record.id}`}>
+                <Link to={`/users/edit/${record._id}`}>
                   <EditOutlined />
                 </Link>
               </Button>
@@ -236,7 +236,7 @@ const Users = () => {
               <Popconfirm
                 title="Xoá tài khoản"
                 description="Xác nhận xoá tài khoản này?"
-                onConfirm={() => handleDeleteUser(record.id)}
+                onConfirm={() => handleDeleteUser(record._id)}
                 onCancel={cancel}
                 okText="Xoá"
                 cancelText="Bỏ"

@@ -10,7 +10,7 @@ import { v4 } from "uuid";
 function RegisterForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [passWord, setPassWord] = useState("");
   const [cfPassword, setCfPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const nameRef = useRef();
@@ -27,22 +27,22 @@ function RegisterForm() {
       msg.nameInput = "*Nhập đầy đủ họ tên";
     }
     //mail
-    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const mailformat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     if (email.trim() === "") {
       msg.emailInput = "*Chưa nhập email";
     } else if (!email.match(mailformat)) {
       msg.emailInput = "*Please enter a valid email address";
     }
     // password
-    if (password.trim() === "") {
+    if (passWord.trim() === "") {
       msg.passwordInput = "*Chưa nhập mật khẩu";
-    } else if (password.trim().length < 8) {
+    } else if (passWord.trim().length < 8) {
       msg.passwordInput = "*mật khẩu tối thiểu 8 ký tự";
     }
     // cfPassword
     if (cfPassword.trim() === "") {
       msg.cfPasswordInput = "*Nhâp lại mật khẩu";
-    } else if (cfPassword.trim() !== password.trim()) {
+    } else if (cfPassword.trim() !== passWord.trim()) {
       msg.cfPasswordInput = "*vui lòng thử lại!";
     }
 
@@ -54,7 +54,7 @@ function RegisterForm() {
     e.preventDefault();
     const isValidate = validateAll();
     if (isValidate) {
-      const userdata = { name, username: email, email, password };
+      const userdata = { name, username: email, email, passWord };
       userdata.id = v4();
       userdata.status = "active";
       userdata.avatar =
@@ -114,8 +114,8 @@ function RegisterForm() {
         <label className="form__label">Mật khẩu</label> <br />
         <input
           className="form__input"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={passWord}
+          onChange={(e) => setPassWord(e.target.value)}
           placeholder="Điền mật khẩu"
           type="password"
         />
