@@ -23,10 +23,11 @@ function Product() {
       setLoading(true);
       const response = await fetch(`${BASE_URL}/products/${id}`);
       setProduct(await response.json());
+      console.log(product);
       setLoading(false);
     };
     getProduct();
-  });
+  }, []);
 
   const handleAddItem = () => {
     dispatch(addItem(product));
