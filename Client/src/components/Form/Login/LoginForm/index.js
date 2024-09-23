@@ -50,7 +50,7 @@ function LoginForm({ handleCloseModal }) {
         (user) => user.email === email && user.passWord === passWord
       );
       if (existAccount) {
-        enqueueSnackbar("Signed in successfully", { variant: "success" });
+        enqueueSnackbar("Đăng nhập thành công!", { variant: "success" });
         navigate("/");
         localStorage.setItem(
           "currentUser",
