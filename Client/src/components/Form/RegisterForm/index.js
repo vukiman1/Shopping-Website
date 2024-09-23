@@ -56,6 +56,7 @@ function RegisterForm() {
     const isValidate = validateAll();
     if (isValidate) {
       const userdata = { name, username: email, email, passWord };
+      console.log(passWord);
       userdata.id = v4();
       userdata.status = "active";
       userdata.avatar =

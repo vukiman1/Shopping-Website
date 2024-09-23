@@ -54,7 +54,7 @@ const ProductForm = (props) => {
   const navigate = useNavigate();
   console.log(props);
 
-  const { product = { id: v4(), status: "active" } } = props;
+  const { product = { _id: v4(), status: "active" } } = props;
   const [imageUpload, setImageUpload] = useState(
     product.imageUrl ||
       "https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg?size=338&ext=jpg&ga=GA1.1.1413502914.1720105200&semt=sph"
@@ -65,7 +65,7 @@ const ProductForm = (props) => {
       // Validate form fields
       const values = await form.validateFields();
 
-      values.id = product.id;
+      values._id = product._id;
       values.imageUrl = imageUpload;
       console.log(values);
       let response;
@@ -76,7 +76,7 @@ const ProductForm = (props) => {
         method = "POST";
         delete values.confirm;
       } else {
-        url = `${BASE_URL}/products/${product.id}`;
+        url = `${BASE_URL}/products/${product._id}`;
         method = "PUT";
       }
 
@@ -111,7 +111,7 @@ const ProductForm = (props) => {
     info.file.status = "uploading";
     console.log(product.id);
 
-    const imageRef = ref(storage, `Products/${product.id}`);
+    const imageRef = ref(storage, `Products/${product._id}`);
     uploadBytes(imageRef, info.file.originFileObj).then(() => {
       // Upload thành công, lấy URL của ảnh
       getDownloadURL(imageRef).then((url) => {

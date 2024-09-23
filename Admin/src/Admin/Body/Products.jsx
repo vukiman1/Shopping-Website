@@ -182,7 +182,7 @@ const Products = () => {
             src={<Image width={40} src={record.imageUrl} />}
             style={{ marginRight: "10px" }}
           />
-          <Link to={`/products/edit/${record.id}`}>
+          <Link to={`/products/edit/${record._id}`}>
             <b>{record.name}</b>
           </Link>
         </>
@@ -227,7 +227,7 @@ const Products = () => {
           <Space.Compact block>
             <Tooltip title="Sửa">
               <Button>
-                <Link to={`/products/edit/${record.id}`}>
+                <Link to={`/products/edit/${record._id}`}>
                   <EditOutlined />
                 </Link>
               </Button>
@@ -236,7 +236,7 @@ const Products = () => {
               <Popconfirm
                 title="Xoá sản phẩm"
                 description="Xác nhận xoá sản phẩm này?"
-                onConfirm={() => handleDeleteProduct(record.id)}
+                onConfirm={() => handleDeleteProduct(record._id)}
                 onCancel={cancel}
                 okText="Xoá"
                 cancelText="Bỏ"

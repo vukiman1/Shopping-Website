@@ -11,7 +11,7 @@ const Register = () => {
   const onFinish = async (values) => {
     console.log(values);
     try {
-      values.id = v4();
+      values._id = v4();
       values.status = "active";
       values.avatar =
         "https://t3.ftcdn.net/jpg/05/70/71/06/360_F_570710660_Jana1ujcJyQTiT2rIzvfmyXzXamVcby8.jpg";

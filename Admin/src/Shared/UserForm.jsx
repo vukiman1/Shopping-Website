@@ -111,7 +111,7 @@ const UserForm = (props) => {
     // info.file.status = "uploading";
     isChangAvt = true;
     setImageUpload(info.file.originFileObj);
-    const imageRef = ref(storage, `Avatar/${user.id}`);
+    const imageRef = ref(storage, `Avatar/${user._id}`);
     uploadBytes(imageRef, imageUpload).then(() => {
       getDownloadURL(imageRef)
         .then((url) => {

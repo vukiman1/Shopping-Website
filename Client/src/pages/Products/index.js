@@ -136,7 +136,7 @@ function Products() {
               <>
                 {filter.map((product) => {
                   return (
-                    <div key={product.id} className="col">
+                    <div key={product._id} className="col">
                       <div className="products__card text-center">
                         <div className="products__img">
                           <img src={product.imageUrl} alt={product.name}></img>
@@ -150,7 +150,7 @@ function Products() {
                             VNĐ
                           </h5>
                           <Link
-                            to={`/products/${product.id}`}
+                            to={`/products/${product._id}`}
                             className="btn__buy"
                           >
                             Mua

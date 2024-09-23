@@ -32,7 +32,7 @@ function LoginForm({ handleCloseModal }) {
 
   useEffect(() => {
     const getUserdata = async () => {
-      const response = await fetch(`${BASE_URL}users`);
+      const response = await fetch(`${BASE_URL}/users`);
       if (response.ok) {
         setUserdata(await response.json());
       } else {
